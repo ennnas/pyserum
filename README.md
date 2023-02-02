@@ -147,3 +147,16 @@ make notebook
 This will start a docker container with `solana` image and deploy a serum DEX which you can use for testing.
 
 The market address, program id, and wallet addresses can be found in the new `crank.log` file after the script runs successfully.
+
+
+### Release
+
+To release a new version remember to update the version in the `setup.py` file and then run on the latest commit:
+
+```sh
+git tag -a v0.7.0a0 -m "[MESSAGE]"
+git push origin --tags
+python setup.py sdist bdist_wheel
+```
+
+Go on github and create the new release with the latest tag and upload the artifacts from the `dist` folder.
